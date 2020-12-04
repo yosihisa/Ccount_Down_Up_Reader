@@ -70,7 +70,7 @@ namespace count_down_up
 
 
 			synth.SetOutputToDefaultAudioDevice();
-			synth.Rate = +3;
+			synth.Rate = 0;
 		}
 
 		public void OnTimerEvent(object source, ElapsedEventArgs e)
@@ -100,7 +100,7 @@ namespace count_down_up
 				string str = t >= 0 ? t.ToString() : (-t).ToString();
 
 				if (
-					 (System.Math.Abs(t) < 20 )||
+					 (System.Math.Abs(t) < 20  && t % 5 == 0) ||
 					 (System.Math.Abs(t) < 180 && t % 5 == 0) ||
 					 (t % 10 == 0)
 					)
